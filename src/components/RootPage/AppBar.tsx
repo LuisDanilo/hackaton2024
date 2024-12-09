@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
   Stack,
   Typography,
 } from "@mui/material"
@@ -76,24 +75,32 @@ function AppBar() {
           <ListItem>
             <Link href={LoginPath}>
               <ListItemButton>
-                <ListItemText
+                <Typography
                   sx={(t) => ({
                     color: t.palette.primary.main,
+                    typography: {
+                      xs: "h5",
+                    },
                   })}
-                  primary={"Sign In"}
-                />
+                >
+                  Sign In
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>
           <ListItem>
             <Link href={AboutPath}>
               <ListItemButton>
-                <ListItemText
-                  primary={"About"}
+                <Typography
                   sx={(t) => ({
                     color: t.palette.text.primary,
+                    typography: {
+                      xs: "h5",
+                    },
                   })}
-                ></ListItemText>
+                >
+                  About
+                </Typography>
               </ListItemButton>
             </Link>
           </ListItem>

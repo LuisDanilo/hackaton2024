@@ -1,12 +1,41 @@
-import { Stack, Typography } from "@mui/material"
+import { Stack, Typography, Box } from "@mui/material"
+import Image from "next/image"
 
 function Text() {
   return (
-    <Stack id="root-page-text">
+    // Box con grid en lugar de Stack
+    // Stack column con flex=1 no toma todo el height disponible de su padre (por ser de tipo column)
+    // Por eso se usa Box con height 100% y grid 1x1 para centrar el unico elemento de la grilla
+    <Box
+      padding={"10px"}
+      display={"grid"}
+      height={"100%"}
+      sx={{
+        placeItems: "center",
+      }}
+      id="root-page-text"
+    >
       <Stack
-        padding={"10px"}
         spacing={"10px"}
+        id="text-container"
       >
+        <Box
+          position={"relative"}
+          width={"100%"}
+          height={"500px"}
+          sx={{
+            display: {
+              xs: "none",
+              sm: "initial",
+            },
+          }}
+        >
+          <Image
+            src="/startup.jpg"
+            alt="startup-banner"
+            fill
+          />
+        </Box>
         <Typography
           textAlign={"center"}
           sx={{
@@ -28,7 +57,8 @@ function Text() {
           Beautiful landing page using NextJS and Material Design components
         </Typography>
       </Stack>
-    </Stack>
+    </Box>
+    // </Box>
   )
 }
 

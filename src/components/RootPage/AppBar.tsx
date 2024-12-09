@@ -24,8 +24,6 @@ function AppBar() {
         id="root-page-appbar"
         direction={"row"}
         justifyContent={"space-between"}
-        position={"absolute"}
-        top={0}
         width={"100%"}
         paddingX={"8px"}
       >
